@@ -1,0 +1,28 @@
+{
+  "id": "INV-004",
+  "date": "2025-10-22",
+  "seller": {
+    "name": "EN16931 Seller",
+    "vat": "FR555555555"
+  },
+  "buyer": {
+    "name": "EN16931 Buyer",
+    "vat": "FR666666666"
+  },
+  "lines": [
+    {
+      "description": "Consulting",
+      "price": "120.00",
+      "quantity": 1
+    },
+    {
+      "description": "Maintenance",
+      "price": "80.00",
+      "quantity": 2
+    }
+  ],
+  "total": "280.00",
+  "tax": "56.00",
+  "subtotal": "224.00"
+}
+

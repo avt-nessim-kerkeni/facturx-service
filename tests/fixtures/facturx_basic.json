@@ -1,0 +1,28 @@
+{
+  "id": "INV-003",
+  "date": "2025-10-22",
+  "seller": {
+    "name": "Basic Seller",
+    "vat": "FR333333333"
+  },
+  "buyer": {
+    "name": "Basic Buyer",
+    "vat": "FR444444444"
+  },
+  "lines": [
+    {
+      "description": "Product X",
+      "price": "30.00",
+      "quantity": 3
+    },
+    {
+      "description": "Product Y",
+      "price": "20.00",
+      "quantity": 5
+    }
+  ],
+  "total": "190.00",
+  "tax": "38.00",
+  "subtotal": "152.00"
+}
+

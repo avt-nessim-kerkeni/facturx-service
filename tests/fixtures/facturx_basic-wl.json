@@ -1,0 +1,28 @@
+{
+  "id": "INV-002",
+  "date": "2025-10-22",
+  "seller": {
+    "name": "Basic WL Seller",
+    "vat": "FR111111111"
+  },
+  "buyer": {
+    "name": "Basic WL Buyer",
+    "vat": "FR222222222"
+  },
+  "lines": [
+    {
+      "description": "Service A",
+      "price": "100.00",
+      "quantity": 1
+    },
+    {
+      "description": "Service B",
+      "price": "50.00",
+      "quantity": 2
+    }
+  ],
+  "total": "200.00",
+  "tax": "40.00",
+  "subtotal": "160.00"
+}
+

@@ -4,9 +4,11 @@ namespace App\Tests\Service;
 
 use App\Service\FacturxXmlService;
 use Atgp\FacturX\XsdValidator;
+use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
+#[CoversClass(FacturxXmlService::class)]
 class FacturxXmlServiceTest extends KernelTestCase
 {
     private FacturxXmlService $xmlService;
@@ -32,9 +34,14 @@ class FacturxXmlServiceTest extends KernelTestCase
         $this->assertIsArray($invoiceData, 'Invoice data should be an array');
 
         $xml = $this->xmlService->generate($invoiceData, $profile);
-        $isValid = $this->xmlValidator->validate($xml);
+        $isValid = $this->xmlValidator->validate($xml, $profile);
 
-        $this->assertTrue($isValid, "Generated XML is invalid for profile: $profile");
+        if (!$isValid) {
+            $errors = $this->xmlValidator->getErrors();
+            $this->fail("Generated XML is invalid for profile: $profile\n" . print_r($errors, true));
+        }
+
+        $this->assertTrue($isValid);
     }
 
     /**
@@ -44,7 +51,7 @@ class FacturxXmlServiceTest extends KernelTestCase
     {
         return [
             ['minimum', 'facturx_minimum.json'],
-            ['basic-wl', 'facturx_basic-wl.json'],
+            ['basicwl', 'facturx_basic-wl.json'],
             ['basic', 'facturx_basic.json'],
             ['en16931', 'facturx_en-16931.json'],
         ];

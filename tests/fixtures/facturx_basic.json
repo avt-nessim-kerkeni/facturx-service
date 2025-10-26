@@ -1,28 +1,80 @@
 {
-  "id": "INV-003",
-  "date": "2025-10-22",
-  "seller": {
-    "name": "Basic Seller",
-    "vat": "FR333333333"
-  },
-  "buyer": {
-    "name": "Basic Buyer",
-    "vat": "FR444444444"
-  },
-  "lines": [
-    {
-      "description": "Product X",
-      "price": "30.00",
-      "quantity": 3
+    "ExchangedDocument": {
+        "ID": "FA-2023-0002",
+        "TypeCode": "380",
+        "IssueDateTime": "20231027"
     },
-    {
-      "description": "Product Y",
-      "price": "20.00",
-      "quantity": 5
+    "SupplyChainTradeTransaction": {
+        "IncludedSupplyChainTradeLineItem": [
+            {
+                "AssociatedDocumentLineDocument": {
+                    "LineID": "1"
+                },
+                "SpecifiedTradeProduct": {
+                    "Name": "Product A"
+                },
+                "SpecifiedLineTradeAgreement": {
+                    "NetPriceProductTradePrice": {
+                        "ChargeAmount": 100.00
+                    }
+                },
+                "SpecifiedLineTradeDelivery": {
+                    "BilledQuantity": 1.0
+                },
+                "SpecifiedLineTradeSettlement": {
+                    "ApplicableTradeTax": {
+                        "TypeCode": "VAT",
+                        "CategoryCode": "S",
+                        "RateApplicablePercent": 20.00
+                    },
+                    "SpecifiedTradeSettlementLineMonetarySummation": {
+                        "LineTotalAmount": 100.00
+                    }
+                }
+            }
+        ],
+        "ApplicableHeaderTradeAgreement": {
+            "SellerTradeParty": {
+                "Name": "Seller Name",
+                "PostalTradeAddress": {
+                    "PostcodeCode": "75001",
+                    "LineOne": "1 Rue de la Paix",
+                    "CityName": "Paris",
+                    "CountryID": "FR"
+                },
+                "SpecifiedTaxRegistration": {
+                    "ID": "FR123456789"
+                }
+            },
+            "BuyerTradeParty": {
+                "Name": "Buyer Name",
+                "PostalTradeAddress": {
+                    "CountryID": "DE"
+                }
+            }
+        },
+        "ApplicableHeaderTradeSettlement": {
+            "InvoiceCurrencyCode": "EUR",
+            "SpecifiedTradePaymentTerms": {
+                "Description": "Payment by bank transfer",
+                "DueDateDateTime": "20231126"
+            },
+            "ApplicableTradeTax": [
+                {
+                    "CalculatedAmount": 20.00,
+                    "TypeCode": "VAT",
+                    "BasisAmount": 100.00,
+                    "CategoryCode": "S",
+                    "RateApplicablePercent": 20.00
+                }
+            ],
+            "SpecifiedTradeSettlementHeaderMonetarySummation": {
+                "LineTotalAmount": 100.00,
+                "TaxBasisTotalAmount": 100.00,
+                "TaxTotalAmount": 20.00,
+                "GrandTotalAmount": 120.00,
+                "DuePayableAmount": 120.00
+            }
+        }
     }
-  ],
-  "total": "190.00",
-  "tax": "38.00",
-  "subtotal": "152.00"
 }
-

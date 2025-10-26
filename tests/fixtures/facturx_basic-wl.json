@@ -1,28 +1,46 @@
 {
-  "id": "INV-002",
-  "date": "2025-10-22",
-  "seller": {
-    "name": "Basic WL Seller",
-    "vat": "FR111111111"
-  },
-  "buyer": {
-    "name": "Basic WL Buyer",
-    "vat": "FR222222222"
-  },
-  "lines": [
-    {
-      "description": "Service A",
-      "price": "100.00",
-      "quantity": 1
+    "ExchangedDocument": {
+        "ID": "FA-2023-0003",
+        "TypeCode": "380",
+        "IssueDateTime": "20231028"
     },
-    {
-      "description": "Service B",
-      "price": "50.00",
-      "quantity": 2
+    "SupplyChainTradeTransaction": {
+        "IncludedSupplyChainTradeLineItem": [],
+        "ApplicableHeaderTradeAgreement": {
+            "SellerTradeParty": {
+                "Name": "Seller Name WL",
+                "PostalTradeAddress": {
+                    "CountryID": "FR"
+                },
+                "SpecifiedTaxRegistration": {
+                    "ID": "FR987654321"
+                }
+            },
+            "BuyerTradeParty": {
+                "Name": "Buyer Name WL",
+                "PostalTradeAddress": {
+                    "CountryID": "GB"
+                }
+            }
+        },
+        "ApplicableHeaderTradeSettlement": {
+            "InvoiceCurrencyCode": "GBP",
+            "ApplicableTradeTax": [
+                {
+                    "CalculatedAmount": 30.00,
+                    "TypeCode": "VAT",
+                    "BasisAmount": 150.00,
+                    "CategoryCode": "S",
+                    "RateApplicablePercent": 20.00
+                }
+            ],
+            "SpecifiedTradeSettlementHeaderMonetarySummation": {
+                "LineTotalAmount": 0,
+                "TaxBasisTotalAmount": 150.00,
+                "TaxTotalAmount": 30.00,
+                "GrandTotalAmount": 180.00,
+                "DuePayableAmount": 180.00
+            }
+        }
     }
-  ],
-  "total": "200.00",
-  "tax": "40.00",
-  "subtotal": "160.00"
 }
-

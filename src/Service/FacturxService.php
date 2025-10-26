@@ -29,7 +29,7 @@ class FacturxService
 
         // Use ATGP writer to embed XML into PDF
         $writer = new Writer();
-        $pdfContent = $writer->generate($sourcePdfPath, $xml);
+        $pdfContent = $writer->generate(file_get_contents($sourcePdfPath), $xml);
 
         file_put_contents($outPdfPath, $pdfContent);
         return $outPdfPath;
@@ -72,7 +72,7 @@ class FacturxService
 
         // 1. Extract XML
         try {
-            $xml = $reader->extractXML($pdfPath);
+            $xml = $reader->extractXML(file_get_contents($pdfPath));
             $result['xml'] = $xml;
         } catch (\Throwable $e) {
             $result['xsd_errors'] = ["XML extraction failed: " . $e->getMessage()];
@@ -141,7 +141,7 @@ class FacturxService
     {
         return match (true) {
             str_contains($guidelineId, 'minimum')  => 'MINIMUM',
-            str_contains($guidelineId, 'basicwl')  => 'BASIC-WL',
+            str_contains($guidelineId, 'basicwl')  => 'BASICWL',
             str_contains($guidelineId, 'basic')    => 'BASIC',
             str_contains($guidelineId, 'en16931')  => 'EN16931',
             default => null

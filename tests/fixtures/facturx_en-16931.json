@@ -1,28 +1,105 @@
 {
-  "id": "INV-004",
-  "date": "2025-10-22",
-  "seller": {
-    "name": "EN16931 Seller",
-    "vat": "FR555555555"
-  },
-  "buyer": {
-    "name": "EN16931 Buyer",
-    "vat": "FR666666666"
-  },
-  "lines": [
-    {
-      "description": "Consulting",
-      "price": "120.00",
-      "quantity": 1
+    "ExchangedDocument": {
+        "ID": "FA-2023-0004",
+        "TypeCode": "380",
+        "IssueDateTime": "20231029"
     },
-    {
-      "description": "Maintenance",
-      "price": "80.00",
-      "quantity": 2
+    "SupplyChainTradeTransaction": {
+        "IncludedSupplyChainTradeLineItem": [
+            {
+                "AssociatedDocumentLineDocument": {
+                    "LineID": "1"
+                },
+                "SpecifiedTradeProduct": {
+                    "SellerAssignedID": "PROD-B",
+                    "Name": "Product B"
+                },
+                "SpecifiedLineTradeAgreement": {
+                    "NetPriceProductTradePrice": {
+                        "ChargeAmount": 250.00
+                    }
+                },
+                "SpecifiedLineTradeDelivery": {
+                    "BilledQuantity": 2.0
+                },
+                "SpecifiedLineTradeSettlement": {
+                    "ApplicableTradeTax": {
+                        "TypeCode": "VAT",
+                        "CategoryCode": "S",
+                        "RateApplicablePercent": 10.00
+                    },
+                    "SpecifiedTradeSettlementLineMonetarySummation": {
+                        "LineTotalAmount": 500.00
+                    }
+                }
+            }
+        ],
+        "ApplicableHeaderTradeAgreement": {
+            "SellerTradeParty": {
+                "Name": "EN16931 Seller",
+                "DefinedTradeContact": {
+                    "PersonName": "John Doe",
+                    "DepartmentName": "Sales",
+                    "TelephoneUniversalCommunication": {
+                        "CompleteNumber": "+49123456789"
+                    },
+                    "EmailURIUniversalCommunication": {
+                        "URIID": "john.doe@seller.com"
+                    }
+                },
+                "PostalTradeAddress": {
+                    "PostcodeCode": "10115",
+                    "LineOne": "Seller Str 1",
+                    "CityName": "Berlin",
+                    "CountryID": "DE"
+                },
+                "SpecifiedTaxRegistration": {
+                    "ID": "DE123456789"
+                }
+            },
+            "BuyerTradeParty": {
+                "Name": "EN16931 Buyer",
+                "PostalTradeAddress": {
+                    "CountryID": "FR"
+                }
+            }
+        },
+        "ApplicableHeaderTradeSettlement": {
+            "InvoiceCurrencyCode": "EUR",
+            "SpecifiedTradeSettlementPaymentMeans": {
+                "TypeCode": "30",
+                "PayeePartyCreditorFinancialAccount": {
+                    "IBANID": "DE89370400440532013000"
+                },
+                "PayeeSpecifiedCreditorFinancialInstitution": {
+                    "BICID": "COBADEFFXXX"
+                }
+            },
+            "ApplicableTradeTax": [
+                {
+                    "CalculatedAmount": 50.00,
+                    "TypeCode": "VAT",
+                    "BasisAmount": 500.00,
+                    "CategoryCode": "S",
+                    "RateApplicablePercent": 10.00
+                }
+            ],
+            "SpecifiedTradeAllowanceCharge": [
+                {
+                    "ChargeIndicator": false,
+                    "ActualAmount": 10.00,
+                    "Reason": "Discount"
+                }
+            ],
+            "SpecifiedTradeSettlementHeaderMonetarySummation": {
+                "LineTotalAmount": 500.00,
+                "ChargeTotalAmount": 0.00,
+                "AllowanceTotalAmount": 10.00,
+                "TaxBasisTotalAmount": 490.00,
+                "TaxTotalAmount": 49.00,
+                "GrandTotalAmount": 539.00,
+                "DuePayableAmount": 539.00
+            }
+        }
     }
-  ],
-  "total": "280.00",
-  "tax": "56.00",
-  "subtotal": "224.00"
 }
-

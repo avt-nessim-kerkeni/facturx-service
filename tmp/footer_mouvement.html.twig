@@ -1,0 +1,10 @@
+{% extends 'cv/print_base.html.twig' %}
+{% block body %}
+<p style="text-align:center;font-size:10px;">
+    {{piedDePageMouvement|default("")|raw}}
+</p>		
+<hr style="color:#0B0B61;">
+<p style="text-align:center;color:#0B0B61;font-size:10px;font-family: Arial, serif;">
+    {{filiale.nomPublic}} - {{'Siret: '~ filiale.siret|default('')}}
+</p>
+{% endblock %}
